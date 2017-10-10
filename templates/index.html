@@ -11,7 +11,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     {% load staticfiles %}
-    <link rel="icon" type="image/png" href="{% static 'i/favicon.png' %}' %}">
+    <link rel="icon" type="image/png" href="{% static 'i/favicon.png' %}">
     <link rel="apple-touch-icon-precomposed" href="{% static 'i/app-icon72x72@2x.png' %}">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
     <link rel="stylesheet" href="{% static 'css/amazeui.min.css' %}"/>
@@ -211,15 +211,15 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="table-font-list.html">
+                            <a data-route="{% url 'microservice/index' %}">
                                 <i class="am-icon-angle-right"></i>
-                                <span>文字表格</span>
+                                <span>服务设置</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
                             <a href="table-images-list.html">
                                 <i class="am-icon-angle-right"></i>
-                                <span>图片表格</span>
+                                <span>服务监控</span>
                                 <i class="tpl-left-nav-content tpl-badge-success">
                                     18
                                 </i>
@@ -233,10 +233,6 @@
                                 </i>
                             </a>
 
-                            <a href="form-news-list.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>文字列表</span>
-                            </a>
                         </li>
                     </ul>
                 </li>
@@ -370,7 +366,7 @@
         </div>
     </div>
 
-    <div class="tpl-content-wrapper">
+    <div class="tpl-content-wrapper" id="selection_right_zyndev">
         <ol class="am-breadcrumb">
             <li><a href="#" class="am-icon-home">首页</a></li>
         </ol>
@@ -516,7 +512,7 @@
                                                 <a class="user-name" href="###">张瑀楠</a>
                                             </td>
                                             <td>154814</td>
-                                            <td class="font-green bold">已下线</td>
+                                            <td class="font-red bold">已下线</td>
                                         </tr>
                                         <tr>
                                             <td>商品服务</td>
@@ -525,7 +521,7 @@
                                                 <a class="user-name" href="###">张宇飞</a>
                                             </td>
                                             <td>1250</td>
-                                            <td class="font-green bold">已下线</td>
+                                            <td class="font-red bold">已下线</td>
                                         </tr>
                                         <tr>
                                             <td>CRM服务</td>
@@ -709,6 +705,10 @@
 <script src="{% static 'js/amazeui.min.js' %}"></script>
 <script src="{% static 'js/iscroll.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>
+<script>
+    $(".tpl-left-nav-list a[data-route]").click(function () {
+        $("#selection_right_zyndev").load(this.dataset.route);
+    });
+</script>
 </body>
-
 </html>

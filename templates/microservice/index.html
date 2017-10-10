@@ -1,0 +1,187 @@
+{% load staticfiles %}
+<ol class="am-breadcrumb">
+    <li><a href="#">微服务</a></li>
+    <li><a href="#">服务设置</a></li>
+</ol>
+
+<div class="row">
+    <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+        <div class="dashboard-stat blue">
+            <div class="visual">
+                <i class="am-icon-comments-o"></i>
+            </div>
+            <div class="details">
+                <div class="number"> 20</div>
+                <div class="desc"> 总服务数</div>
+            </div>
+            <a class="more" href="#"> 查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+        <div class="dashboard-stat red">
+            <div class="visual">
+                <i class="am-icon-bar-chart-o"></i>
+            </div>
+            <div class="details">
+                <div class="number"> 99%</div>
+                <div class="desc"> API调用成功率</div>
+            </div>
+            <a class="more" href="#"> 查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+        <div class="dashboard-stat green">
+            <div class="visual">
+                <i class="am-icon-apple"></i>
+            </div>
+            <div class="details">
+                <div class="number"> 2</div>
+                <div class="desc"> 故障次数</div>
+            </div>
+            <a class="more" href="#"> 查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+        <div class="dashboard-stat purple">
+            <div class="visual">
+                <i class="am-icon-android"></i>
+            </div>
+            <div class="details">
+                <div class="number"> 105</div>
+                <div class="desc"> 迭代次数</div>
+            </div>
+            <a class="more" href="#"> 查看更多
+                <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="am-u-md-12 am-u-sm-12 row-mb">
+        <div class="tpl-portlet">
+            <div class="tpl-portlet-title">
+                <div class="tpl-caption font-green ">
+                    <i class="am-icon-cloud-download"></i>
+                    <span> Cloud 数据统计</span>
+                </div>
+            </div>
+
+            <div class="tpl-scrollable">
+                <div class="number-stats">
+                    <div class="stat-number am-fl am-u-md-6">
+                        <div class="title am-text-right">Now Total</div>
+                        <div class="number am-text-right am-text-warning"> 5</div>
+                    </div>
+                    <div class="stat-number am-fr am-u-md-6">
+                        <div class="title">History Total</div>
+                        <div class="number am-text-success"> 8</div>
+                    </div>
+                </div>
+                <div id="wrapper" class="wrapper">
+                    <div id="scroller" class="scroller">
+                        <table class="am-table tpl-table">
+                            <thead>
+                                <tr class="tpl-table-uppercase">
+                                    <th>项目</th>
+                                    <th>负责人</th>
+                                    <th>调用次数</th>
+                                    <th>成功率</th>
+                                    <th>详细</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>用户服务</td>
+                                    <td>
+                                        <img src="{% static 'img/zyndev.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">张瑀楠</a>
+                                    </td>
+                                    <td>1250</td>
+                                    <td class="font-green bold">80%</td>
+                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
+                                </tr>
+                                <tr>
+                                    <td>订单服务</td>
+                                    <td>
+                                        <img src="{% static 'img/zyndev.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">张瑀楠</a>
+                                    </td>
+                                    <td>465846</td>
+                                    <td class="font-green bold">90%</td>
+                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
+                                </tr>
+                                <tr>
+                                    <td>CRM服务</td>
+                                    <td>
+                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">胡旭磊</a>
+                                    </td>
+                                    <td>465846</td>
+                                    <td class="font-green bold">99%</td>
+                                    <td>(UP2)192.168.1.1:8979</td>
+                                </tr>
+                                <tr>
+                                    <td>订单服务</td>
+                                    <td>
+                                        <img src="{% static 'img/zyndev.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">张瑀楠</a>
+                                    </td>
+                                    <td>154814</td>
+                                    <td class="font-green bold">已下线</td>
+                                    <td>(DOWN)192.168.1.1:8979</td>
+                                </tr>
+                                <tr>
+                                    <td>商品服务</td>
+                                    <td>
+                                        <img src="{% static 'img/user02.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">张宇飞</a>
+                                    </td>
+                                    <td>1250</td>
+                                    <td class="font-green bold">已下线</td>
+                                    <td>(DOWN)192.168.1.1:8979</td>
+                                </tr>
+                                <tr>
+                                    <td>CRM服务</td>
+                                    <td>
+                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">胡旭磊</a>
+                                    </td>
+                                    <td>465846</td>
+                                    <td class="font-green bold">99%</td>
+                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
+                                </tr>
+                                <tr>
+                                    <td>CRM服务</td>
+                                    <td>
+                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">胡旭磊</a>
+                                    </td>
+                                    <td>465846</td>
+                                    <td class="font-green bold">99%</td>
+                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
+                                </tr>
+                                <tr>
+                                    <td>CRM服务</td>
+                                    <td>
+                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
+                                        <a class="user-name" href="###">胡旭磊</a>
+                                    </td>
+                                    <td>465846</td>
+                                    <td class="font-green bold">99%</td>
+                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

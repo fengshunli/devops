@@ -10,6 +10,10 @@ from django.shortcuts import render, HttpResponseRedirect
 logger = logging.getLogger(__name__)
 
 
+def index(request):
+    return render(request, "index.html")
+
+
 def login(request):
     if request.method == 'GET':
         return JsonResponse({"code": 403, "errmsg": "请求不允许"}, safe=False)
