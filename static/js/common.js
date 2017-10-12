@@ -58,16 +58,25 @@ $(document).on("click", "#m_add_micro_server_confirm", function(){
      }
 
      $.ajax({
-         url:"{% url 'microservice/add' %}",
+         url: "microservice/add",
          data:{
-
+             "csrfmiddlewaretoken": $("input[name='csrfmiddlewaretoken']").val(),
+             "projectName": m_projectName_obj.val(),
+             "projectURL": m_projectURL_obj.val(),
+             "manager": m_manager_obj.val(),
+             "email": m_email_obj.val()
          },
          type:'POST',
          success: function (data) {
-
+             if (data.code == 200) {
+                 $("button.add_micro_server:first").click();
+                 alert("添加成功... 马上进行拉取数据测试");
+             } else {
+                 alert("添加失败... " + data.msg);
+             }
          },
          error: function () {
-
+             alert("添加失败... ");
          }
      })
 
