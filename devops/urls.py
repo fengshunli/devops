@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     url(r'^microservice/', include('microservice.urls')),
+    url(r'^asset/', include('asset.urls')),
+    url(r'^task/', include('task.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
