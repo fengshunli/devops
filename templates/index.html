@@ -705,10 +705,6 @@
 <script src="{% static 'js/amazeui.min.js' %}"></script>
 <script src="{% static 'js/iscroll.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>
-<script>
-    $(".tpl-left-nav-list a[data-route]").click(function () {
-        $("#selection_right_zyndev").load(this.dataset.route);
-    });
-</script>
+<script src="{% static 'js/common.js' %}"></script>
 </body>
 </html>

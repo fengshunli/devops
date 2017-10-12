@@ -65,6 +65,68 @@
 
 <div class="row">
     <div class="am-u-md-12 am-u-sm-12 row-mb">
+        <button type="button" class="add_micro_server am-btn am-btn-primary" data-show="0"><i class="am-icon-plus am-icon-fw"></i>添加服务(Eureka)</button>
+
+        <div id="add_micro_project_dialog" style="margin-top: 20px;display: none;">
+            <div class="tpl-portlet">
+                <div class="tpl-portlet-title">
+                    <div class="tpl-caption font-green ">
+                        <i class="am-icon-cloud-download"></i>
+                        <span> Cloud 服务添加</span>
+                    </div>
+                </div>
+
+                <div class="tpl-scrollable" style="min-height: 150px;">
+                    <div id="wrapper" class="wrapper" style="height: 290px;">
+                        <div id="scroller" class="scroller">
+                            <form class="am-form am-form-horizontal">
+                                <div class="am-form-group">
+                                    <label for="projectName" class="am-u-sm-2 am-form-label">项目名称</label>
+                                    <div class="am-u-sm-10">
+                                        <input type="text" id="m_projectName" placeholder="输入你的项目名称">
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <label for="projectURL" class="am-u-sm-2 am-form-label">项目地址（EUREKA）</label>
+                                    <div class="am-u-sm-10">
+                                        <input type="text" id="m_projectURL" placeholder="输入你的项目地址">
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <label for="manager" class="am-u-sm-2 am-form-label">负责人</label>
+                                    <div class="am-u-sm-10">
+                                        <input type="text" id="m_manager" placeholder="输入项目负责人">
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <label for="email" class="am-u-sm-2 am-form-label">监控邮件</label>
+                                    <div class="am-u-sm-10">
+                                        <input type="email" id="m_email" placeholder="输入你的电子邮件">
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-2 am-u-sm-offset-4">
+                                        <button type="button" class="add_micro_server am-btn am-btn-default">取消添加</button>
+                                    </div>
+                                    <div class="am-u-sm-6">
+                                        <button type="button" id="m_add_micro_server_confirm" class="am-btn am-btn-success">确认添加</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="am-u-md-12 am-u-sm-12 row-mb">
         <div class="tpl-portlet">
             <div class="tpl-portlet-title">
                 <div class="tpl-caption font-green ">
