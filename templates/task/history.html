@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <ol class="am-breadcrumb">
-    <li><a href="#">资产管理</a></li>
-    <li class="am-active">资产信息</li>
+    <li><a href="#">Task管理</a></li>
+    <li class="am-active">历史记录</li>
 </ol>
 <div class="tpl-portlet-components">
     <div class="portlet-title">
@@ -22,14 +22,8 @@
             <div class="am-u-sm-12 am-u-md-6">
                 <div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                        <button type="button" class="am-btn am-btn-default am-btn-success">
-                            <span class="am-icon-plus"></span> 新增
-                        </button>
                         <button type="button" class="am-btn am-btn-default am-btn-secondary">
                             <span class="am-icon-save"></span> 下载
-                        </button>
-                        <button type="button" class="am-btn am-btn-default am-btn-warning">
-                            <span class="am-icon-archive"></span> 审核
                         </button>
                     </div>
                 </div>
@@ -38,10 +32,8 @@
                 <div class="am-form-group">
                     <select data-am-selected="{btnSize: 'sm'}">
                         <option value="option1">所有类别</option>
-                        <option value="option2">生产</option>
-                        <option value="option3">测试</option>
-                        <option value="option3">开发</option>
-                        <option value="option3">开发人员</option>
+                        <option value="option2">Python</option>
+                        <option value="option3">Shell</option>
                     </select>
                 </div>
             </div>
@@ -61,14 +53,13 @@
                     <table class="am-table am-table-striped am-table-hover table-main">
                         <thead>
                         <tr>
-                            <th class="table-check">
-                                <input type="checkbox" class="tpl-table-fz-check">
-                            </th>
+                            <th class="table-check">#</th>
                             <th class="table-title">IP</th>
-                            <th class="table-type">类别</th>
-                            <th class="table-author am-hide-sm-only">使用者</th>
-                            <th class="table-date am-hide-sm-only">备注</th>
-                            <th class="table-date am-hide-sm-only">修改日期</th>
+                            <th class="table-type">脚本名称</th>
+                            <th class="table-type">脚本备注</th>
+                            <th class="table-author am-hide-sm-only">创建者</th>
+                            <th class="table-author am-hide-sm-only">执行者</th>
+                            <th class="table-date am-hide-sm-only">执行日期</th>
                             <th class="table-set">操作</th>
                         </tr>
                         </thead>
@@ -76,98 +67,70 @@
                         <tr>
                             <td>1</td>
                             <td>192.128.23.45</td>
-                            <td>开发，测试</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                            <td>删除根目录</td>
+                            <td class="am-hide-sm-only">危险操作</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span
-                                                class="am-icon-pencil-square-o"></span> 编辑
-                                        </button>
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
-                                            <span class="am-icon-trash-o"></span> 删除
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                            <span class="am-icon-pencil-square-o"></span> 详情
                                         </button>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>12.23.34.5</td>
-                            <td>default</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                            <td>1</td>
+                            <td>192.128.23.45</td>
+                            <td>删除根目录</td>
+                            <td class="am-hide-sm-only">危险操作</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span
-                                                class="am-icon-pencil-square-o"></span> 编辑
-                                        </button>
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
-                                            <span class="am-icon-trash-o"></span> 删除
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                            <span class="am-icon-pencil-square-o"></span> 详情
                                         </button>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td>234.234.54.2</td>
-                            <td>default</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                            <td>1</td>
+                            <td>192.128.23.45</td>
+                            <td>删除根目录</td>
+                            <td class="am-hide-sm-only">危险操作</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span
-                                                class="am-icon-pencil-square-o"></span> 编辑
-                                        </button>
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
-                                            <span class="am-icon-trash-o"></span> 删除
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                            <span class="am-icon-pencil-square-o"></span> 详情
                                         </button>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td>4</td>
-                            <td>45.67.54.23</td>
-                            <td>default</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                            <td>1</td>
+                            <td>192.128.23.45</td>
+                            <td>删除根目录</td>
+                            <td class="am-hide-sm-only">危险操作</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">张瑀楠</td>
+                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span
-                                                class="am-icon-pencil-square-o"></span> 编辑
-                                        </button>
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
-                                            <span class="am-icon-trash-o"></span> 删除
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>12.23.12.45</td>
-                            <td>default</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">测试1号</td>
-                            <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-                            <td>
-                                <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span
-                                                class="am-icon-pencil-square-o"></span> 编辑
-                                        </button>
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
-                                            <span class="am-icon-trash-o"></span> 删除
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                            <span class="am-icon-pencil-square-o"></span> 详情
                                         </button>
                                     </div>
                                 </div>

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{% static 'css/amazeui.min.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/admin.css' %}">
     <link rel="stylesheet" href="{% static 'css/app.css' %}">
-    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/codemirror.css' %}">
 </head>
 
 <body data-type="index">
@@ -197,9 +197,6 @@
                     <a href="chart.html" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-bar-chart"></i>
                         <span>数据表</span>
-                        <i class="tpl-left-nav-content tpl-badge-danger">
-                            12
-                        </i>
                     </a>
                 </li>
 
@@ -214,23 +211,16 @@
                             <a data-route="{% url 'microservice/index' %}">
                                 <i class="am-icon-angle-right"></i>
                                 <span>服务设置</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
                             <a href="table-images-list.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>服务监控</span>
-                                <i class="tpl-left-nav-content tpl-badge-success">
-                                    18
-                                </i>
                             </a>
 
                             <a href="form-news.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>消息列表</span>
-                                <i class="tpl-left-nav-content tpl-badge-primary">
-                                    5
-                                </i>
                             </a>
                         </li>
                     </ul>
@@ -247,7 +237,6 @@
                             <a data-route="{% url 'asset/index' %}">
                                 <i class="am-icon-angle-right"></i>
                                 <span>资产信息</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
                         </li>
                     </ul>
@@ -261,18 +250,19 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
+                            <a data-route="{% url 'task/once' %}">
+                                <i class="am-icon-angle-right"></i>
+                                <span>单次执行</span>
+                            </a>
+
                             <a data-route="{% url 'task/index' %}">
                                 <i class="am-icon-angle-right"></i>
                                 <span>脚本列表</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
                             <a data-route="{% url 'task/history' %}">
                                 <i class="am-icon-angle-right"></i>
                                 <span>历史记录</span>
-                                <i class="tpl-left-nav-content tpl-badge-success">
-                                    18
-                                </i>
                             </a>
                         </li>
                     </ul>
@@ -289,13 +279,11 @@
                             <a href="form-amazeui.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>项目管理</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
                             <a href="form-amazeui.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>全量发布</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
                             <a href="form-line.html">
@@ -317,7 +305,6 @@
                             <a href="form-amazeui.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>Amaze UI 表单</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
                             <a href="form-line.html">
@@ -667,7 +654,9 @@
         </div>
     </div>
 </div>
+<script src="{% static 'js/echarts.min.js' %}"></script>
 <script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/codemirror.js' %}"></script>
 <script src="{% static 'js/amazeui.min.js' %}"></script>
 <script src="{% static 'js/iscroll.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>

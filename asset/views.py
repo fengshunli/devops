@@ -1,13 +1,14 @@
-from django.shortcuts import render
-
 # Create your views here.
-import requests
 from django.http import JsonResponse
 from django.shortcuts import render
 
 
 def index(request):
     return render(request, "asset/index.html")
+
+
+def inadd(request):
+    return render(request, "asset/add.html")
 
 
 def add(request):
