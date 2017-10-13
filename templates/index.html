@@ -232,7 +232,6 @@
                                     5
                                 </i>
                             </a>
-
                         </li>
                     </ul>
                 </li>
@@ -245,31 +244,10 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="table-font-list.html">
+                            <a data-route="{% url 'asset/index' %}">
                                 <i class="am-icon-angle-right"></i>
-                                <span>文字表格</span>
+                                <span>资产信息</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                            </a>
-
-                            <a href="table-images-list.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>图片表格</span>
-                                <i class="tpl-left-nav-content tpl-badge-success">
-                                    18
-                                </i>
-                            </a>
-
-                            <a href="form-news.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>消息列表</span>
-                                <i class="tpl-left-nav-content tpl-badge-primary">
-                                    5
-                                </i>
-                            </a>
-
-                            <a href="form-news-list.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>文字列表</span>
                             </a>
                         </li>
                     </ul>
@@ -283,31 +261,18 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="table-font-list.html">
+                            <a data-route="{% url 'task/index' %}">
                                 <i class="am-icon-angle-right"></i>
-                                <span>文字表格</span>
+                                <span>脚本列表</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="table-images-list.html">
+                            <a data-route="{% url 'task/history' %}">
                                 <i class="am-icon-angle-right"></i>
-                                <span>图片表格</span>
+                                <span>历史记录</span>
                                 <i class="tpl-left-nav-content tpl-badge-success">
                                     18
                                 </i>
-                            </a>
-
-                            <a href="form-news.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>消息列表</span>
-                                <i class="tpl-left-nav-content tpl-badge-primary">
-                                    5
-                                </i>
-                            </a>
-
-                            <a href="form-news-list.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>文字列表</span>
                             </a>
                         </li>
                     </ul>
@@ -692,12 +657,13 @@
                 </div>
             </div>
         </div>
-        <div class="tpl-content-scope">
-            <div class="note note-info">
-                <h3>ZYNDEV DEVOPS<span class="close" data-close="note"></span></h3>
-                <p>提供微服务监控，项目迭代上线，资产管理，webssh，持续集成等功能</p>
-                <p><span class="label label-danger">提示:</span> &nbsp;&nbsp;&nbsp;正在开发中，欢迎加入！</p>
-            </div>
+
+    </div>
+    <div class="tpl-content-scope">
+        <div class="note note-info">
+            <h3>ZYNDEV DEVOPS<span class="close" data-close="note"></span></h3>
+            <p>提供微服务监控，项目迭代上线，资产管理，webssh，持续集成等功能</p>
+            <p><span class="label label-danger">提示:</span> &nbsp;&nbsp;&nbsp;正在开发中，欢迎加入！</p>
         </div>
     </div>
 </div>

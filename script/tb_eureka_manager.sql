@@ -25,7 +25,7 @@ CREATE TABLE `tb_eureka_manager` (
   `eureka_url` varchar(200) NOT NULL,
   `manager` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
