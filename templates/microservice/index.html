@@ -159,86 +159,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            {% for record in records %}
                                 <tr>
-                                    <td>用户服务</td>
+                                    <td>{{ record.app }}</td>
                                     <td>
                                         <img src="{% static 'img/zyndev.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">张瑀楠</a>
+                                        <a class="user-name" href="###">{{ record.manager }}</a>
                                     </td>
                                     <td>1250</td>
                                     <td class="font-green bold">80%</td>
-                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
+                                    <td>{{ record.eureka_url }}</td>
                                 </tr>
-                                <tr>
-                                    <td>订单服务</td>
-                                    <td>
-                                        <img src="{% static 'img/zyndev.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">张瑀楠</a>
-                                    </td>
-                                    <td>465846</td>
-                                    <td class="font-green bold">90%</td>
-                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
-                                </tr>
-                                <tr>
-                                    <td>CRM服务</td>
-                                    <td>
-                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">胡旭磊</a>
-                                    </td>
-                                    <td>465846</td>
-                                    <td class="font-green bold">99%</td>
-                                    <td>(UP2)192.168.1.1:8979</td>
-                                </tr>
-                                <tr>
-                                    <td>订单服务</td>
-                                    <td>
-                                        <img src="{% static 'img/zyndev.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">张瑀楠</a>
-                                    </td>
-                                    <td>154814</td>
-                                    <td class="font-green bold">已下线</td>
-                                    <td>(DOWN)192.168.1.1:8979</td>
-                                </tr>
-                                <tr>
-                                    <td>商品服务</td>
-                                    <td>
-                                        <img src="{% static 'img/user02.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">张宇飞</a>
-                                    </td>
-                                    <td>1250</td>
-                                    <td class="font-green bold">已下线</td>
-                                    <td>(DOWN)192.168.1.1:8979</td>
-                                </tr>
-                                <tr>
-                                    <td>CRM服务</td>
-                                    <td>
-                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">胡旭磊</a>
-                                    </td>
-                                    <td>465846</td>
-                                    <td class="font-green bold">99%</td>
-                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
-                                </tr>
-                                <tr>
-                                    <td>CRM服务</td>
-                                    <td>
-                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">胡旭磊</a>
-                                    </td>
-                                    <td>465846</td>
-                                    <td class="font-green bold">99%</td>
-                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
-                                </tr>
-                                <tr>
-                                    <td>CRM服务</td>
-                                    <td>
-                                        <img src="{% static 'img/user07.png' %}" alt="" class="user-pic">
-                                        <a class="user-name" href="###">胡旭磊</a>
-                                    </td>
-                                    <td>465846</td>
-                                    <td class="font-green bold">99%</td>
-                                    <td>(UP2)192.168.1.1:8979,10.168.34.89:9876</td>
-                                </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
                     </div>

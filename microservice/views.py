@@ -6,7 +6,11 @@ from microservice.models import TbEurekaManager
 
 
 def index(request):
-    return render(request, "microservice/index.html")
+    eurekas = list(TbEurekaManager.objects.all())
+    context = {
+        "records": eurekas,
+    }
+    return render(request, "microservice/index.html", context)
 
 
 def add(request):
@@ -30,3 +34,8 @@ def add(request):
                 return JsonResponse({"code": 200, "msg": "添加成功"}, safe=False)
             return JsonResponse({"code": 100, "msg": "该项目地址已经存在"}, safe=False)
     return JsonResponse({"code": 100, "msg": "项目地址不能访问"}, safe=False)
+
+
+def project_list(request):
+    eurekas = list(TbEurekaManager.objects.all())
+    return JsonResponse({"code": 100, "data": eurekas}, safe=False)
