@@ -49,110 +49,108 @@
         </div>
         <div class="am-g">
             <div class="am-u-sm-12">
-                <form class="am-form">
-                    <table class="am-table am-table-striped am-table-hover table-main">
-                        <thead>
-                        <tr>
-                            <th class="table-check">#</th>
-                            <th class="table-title">IP</th>
-                            <th class="table-type">脚本名称</th>
-                            <th class="table-type">脚本备注</th>
-                            <th class="table-author am-hide-sm-only">创建者</th>
-                            <th class="table-author am-hide-sm-only">执行者</th>
-                            <th class="table-date am-hide-sm-only">执行日期</th>
-                            <th class="table-set">操作</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>192.128.23.45</td>
-                            <td>删除根目录</td>
-                            <td class="am-hide-sm-only">危险操作</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
-                            <td>
-                                <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
-                                            <span class="am-icon-pencil-square-o"></span> 详情
-                                        </button>
-                                    </div>
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th class="table-check">#</th>
+                        <th class="table-title">IP</th>
+                        <th class="table-type">脚本名称</th>
+                        <th class="table-type">脚本备注</th>
+                        <th class="table-author am-hide-sm-only">创建者</th>
+                        <th class="table-author am-hide-sm-only">执行者</th>
+                        <th class="table-date am-hide-sm-only">执行日期</th>
+                        <th class="table-set">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>192.128.23.45</td>
+                        <td>删除根目录</td>
+                        <td class="am-hide-sm-only">危险操作</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button data-route="{% url 'task/details' %}" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                        <span class="am-icon-pencil-square-o"></span> 详情
+                                    </button>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>192.128.23.45</td>
-                            <td>删除根目录</td>
-                            <td class="am-hide-sm-only">危险操作</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
-                            <td>
-                                <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
-                                            <span class="am-icon-pencil-square-o"></span> 详情
-                                        </button>
-                                    </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>192.128.23.45</td>
+                        <td>删除根目录</td>
+                        <td class="am-hide-sm-only">危险操作</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button data-route="{% url 'task/details' %}" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                        <span class="am-icon-pencil-square-o"></span> 详情
+                                    </button>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>192.128.23.45</td>
-                            <td>删除根目录</td>
-                            <td class="am-hide-sm-only">危险操作</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
-                            <td>
-                                <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
-                                            <span class="am-icon-pencil-square-o"></span> 详情
-                                        </button>
-                                    </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>192.128.23.45</td>
+                        <td>删除根目录</td>
+                        <td class="am-hide-sm-only">危险操作</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button data-route="{% url 'task/details' %}" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                        <span class="am-icon-pencil-square-o"></span> 详情
+                                    </button>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>192.128.23.45</td>
-                            <td>删除根目录</td>
-                            <td class="am-hide-sm-only">危险操作</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">张瑀楠</td>
-                            <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
-                            <td>
-                                <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
-                                            <span class="am-icon-pencil-square-o"></span> 详情
-                                        </button>
-                                    </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>192.128.23.45</td>
+                        <td>删除根目录</td>
+                        <td class="am-hide-sm-only">危险操作</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">张瑀楠</td>
+                        <td class="am-hide-sm-only">2017-02-12 02：45：77</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button data-route="{% url 'task/details' %}" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                        <span class="am-icon-pencil-square-o"></span> 详情
+                                    </button>
                                 </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <div class="am-cf">
-                        <div class="am-fr">
-                            <ul class="am-pagination tpl-pagination">
-                                <li class="am-disabled"><a href="#">«</a></li>
-                                <li class="am-active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
-                        </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="am-cf">
+                    <div class="am-fr">
+                        <ul class="am-pagination tpl-pagination">
+                            <li class="am-disabled"><a href="#">«</a></li>
+                            <li class="am-active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
                     </div>
-                    <hr>
-                </form>
+                </div>
+                <hr>
             </div>
         </div>
     </div>

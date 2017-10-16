@@ -15,7 +15,7 @@ $(document).on("click", "button.add_micro_server", function(){
     }
 });
 
-$(document).on("click", ".tpl-left-nav-list a[data-route], *[data-route]", function () {
+$(document).on("click", ".tpl-left-nav-list a[data-route], button[data-route], a[data-route]", function () {
     $("#selection_right_zyndev").load(this.dataset.route);
 });
 
