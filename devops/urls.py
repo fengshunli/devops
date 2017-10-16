@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^microservice/', include('microservice.urls')),
     url(r'^asset/', include('asset.urls')),
     url(r'^task/', include('task.urls')),
+    url(r'^release/', include('release.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

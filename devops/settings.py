@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'microservice',
     'asset',
     'task',
+    'release',
 ]
 
 MIDDLEWARE = [
