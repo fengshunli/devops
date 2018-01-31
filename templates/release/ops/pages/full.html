@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>人人汽车金控分期release sys</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">人人汽车金控分期release sys</a>
+            </div>
+            <!-- /.navbar-header -->
+
+           
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">                   
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Staging预发布env</a>
+                        </li>                    
+						 <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Prod正式发布env<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="full.html">全量发布</a>
+                                </li>
+                                <li>
+                                    <a href="add.html"> 增量发布</a>
+                                </li>
+								<li>
+                                    <a href="roll.html"> 回滚代码</a>
+                                </li>
+								<li>
+                                    <a href="restart.html"> 项目重启</a>
+                                </li>
+								<li>
+                                    <a href="nginx.html"> nginx上下线</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+						<li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Spring Cloud<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="maven.html">Maven package</a>
+                                </li>
+                                <li>
+                                    <a href="spring-test.html"> Test发布env</a>
+                                </li>
+								<li>
+                                    <a href="spring-stag.html"> Staging发布env</a>
+                                </li>
+								<li>
+                                    <a href="spring-prod.html"> Prod发布env</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>                       
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">全量正式发布</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+				<div class="row">
+					<div class="col-lg-4">
+						<form class="form-horizontal">
+							<fieldset>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Project_Group</label>
+									<div class="col-sm-9">
+										<select id="proj_g" class="form-control">
+											<option >Please choose</option>
+											<option value="rr_jk_g">人人金控</option>
+<option value="rr_cr_g">人人核心</option>
+											<option value="rr_lc_g">人人理财</option>
+											<option value="rr_fq_g">人人分期</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Project_Name</label>
+									<div class="col-sm-9">
+										<select id="proj_n" class="form-control">
+											<option >Please choose</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Svn_Version</label>
+									<div class="col-sm-9">
+										<input id="svn_v" type="number" class="form-control">
+									</div>
+								</div>	
+							</fieldset>
+						</form>
+						<div class="form-group">
+							<div class="col-sm-offset-3">
+								<button type="submit" id="kick" class="btn btn-default">提交</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-1">
+					</div>
+					<div class="col-lg-7">
+						<pre id="info"></pre>
+					</div>
+				</div>
+				
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+	
+	<script>
+        $(function() {
+			$("#proj_g").change(function(){
+				$.ajax({
+					type: "GET",
+					url: "/api/ops/get_proj_n?proj_g="+$("#proj_g").val(),
+					data: {},
+					dataType: "text",
+					success: function(data){
+						var result =  eval(data);
+						$("#proj_n").empty();
+						$("#proj_h").empty();
+						$("#proj_n").append('<option value="-1">请选择</option>');
+						$.each(result, function (index, value) {
+							$("#proj_n").append('<option value="'+value+'">'+value+'</option>');
+						});
+					 },
+					 error:function(XMLResponse){
+							 alert("error"+XMLResponse.responseText)
+					 }
+				});
+			});
+
+                        $("#kick").click(function(){
+                                var answer = confirm($("#proj_n").val()+"\n"+$("#svn_v").val()+"\n"+"\nare you sure")
+                                if (answer){
+                                $("#info").html("Starting,please hold on.................................")
+                                $.ajax({
+                                        type: "GET",
+                                        url: "/api/ops/full?env=prod&proj_g="+$("#proj_g").val()+"&proj_n="+$("#proj_n").val()+"&svn_v="+$("#svn_v").val(),
+                                        data: {},
+                                        dataType: "text",
+                                        success: function(result){
+                                               _interval = setInterval(function(){
+                                                     $.ajax({
+                                                           type: "GET",
+                                                           url: "/api/ops/read?file="+result,
+                                                           data: {},
+                                                           dataType: "text",
+                                                           success: function(data){
+                                                                  if($.trim(data)=="over"){
+                                                                          alert("完成,please check");
+                                                                          clearInterval(_interval);
+                                                                  }
+                                                                  else { $("#info").html(data);}
+                                                           },
+                                                           error:function(XMLResponse){
+                                                                  alert("error"+XMLResponse.responseText)
+                                                           }
+                                                     });
+                                               },2000);
+                                        },
+                                        error:function(XMLResponse){
+                                             alert("error"+XMLResponse.responseText)
+                                        }
+                                });
+                                }
+                        });
+        });
+	</script>
+
+</body>
+
+</html>

@@ -29,7 +29,6 @@ $(document).on("click", "#m_add_micro_server_confirm", function(){
          m_projectName_obj.removeClass("am-form-field");
      }
 
-
      let m_projectURL_obj = $("#m_projectURL");
      if(m_projectURL_obj.val() == "" || m_projectURL_obj.val().length < 4) {
          m_projectURL_obj.parent().parent().addClass("am-form-error");
@@ -68,7 +67,7 @@ $(document).on("click", "#m_add_micro_server_confirm", function(){
          },
          type:'POST',
          success: function (data) {
-             if (data.code == 200) {
+             if (data.code === 200) {
                  $("button.add_micro_server:first").click();
                  alert("添加成功... 马上进行拉取数据测试");
              } else {
@@ -79,5 +78,4 @@ $(document).on("click", "#m_add_micro_server_confirm", function(){
              alert("添加失败... ");
          }
      })
-
 });
