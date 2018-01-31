@@ -276,9 +276,13 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a data-route="{% url 'release/index' %}">
+                            <a data-route="{% url 'release/project/index' %}">
                                 <i class="am-icon-angle-right"></i>
                                 <span>项目管理</span>
+                            </a>
+                            <a data-route="{% url 'release/spring/cloud/index' %}">
+                                <i class="am-icon-angle-right"></i>
+                                <span>Spring Cloud 项目打包</span>
                             </a>
 
                             <a data-route="{% url 'release/index' %}">
@@ -643,14 +647,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-    </div>
-    <div class="tpl-content-scope">
-        <div class="note note-info">
-            <h3>ZYNDEV DEVOPS<span class="close" data-close="note"></span></h3>
-            <p>提供微服务监控，项目迭代上线，资产管理，webssh，持续集成等功能</p>
-            <p><span class="label label-danger">提示:</span> &nbsp;&nbsp;&nbsp;正在开发中，欢迎加入！</p>
         </div>
     </div>
 </div>
