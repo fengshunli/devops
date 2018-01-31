@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, "task/index.html")
+    return render(request, "release/git-spring-deploy.html")
 
 
 def once(request):
