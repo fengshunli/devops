@@ -38,4 +38,4 @@ def add(request):
 
 def project_list(request):
     eurekas = list(TbEurekaManager.objects.all())
-    return JsonResponse({"code": 100, "data": eurekas}, safe=False)
+    return JsonResponse({"code": 200, "data": eurekas}, safe=False)
