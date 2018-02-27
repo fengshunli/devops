@@ -1,17 +1,44 @@
 import logging
+from xml.etree import ElementTree
 
-from django.http import JsonResponse
+import requests
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
+from django.http import JsonResponse
 from django.shortcuts import render, HttpResponseRedirect
 
 logger = logging.getLogger(__name__)
 
 
 def index(request):
-    return render(request, "index.html")
+    applications_str = requests.get('http://eureka.didispace.com/eureka/apps').text
+
+    root = ElementTree.fromstring(applications_str)
+    list_application = root.getiterator("application")
+
+    application_size = 0
+    instance_size = 0
+    for application in list_application:
+        application_size = application_size + 1
+        print('\t application:', application.find('name').text)
+        instance_list = application.getiterator('instance')
+        for instance in instance_list:
+            instance_size = instance_size + 1
+            print('\t |- instanceId', instance.find('instanceId').text)
+            print('\t |- hostName', instance.find('hostName').text)
+            print('\t |- app', instance.find('app').text)
+            print('\t |- ipAddr', instance.find('ipAddr').text)
+            print('\t |- status', instance.find('status').text)
+            print('\t |- statusPageUrl', instance.find('statusPageUrl').text)
+            print('\t |- healthCheckUrl', instance.find('healthCheckUrl').text)
+
+    context = {
+        "application_size": application_size,
+        "instance_size": instance_size
+    }
+    return render(request, "index.html", context)
 
 
 def login(request):
