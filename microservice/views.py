@@ -9,7 +9,7 @@ from microservice.models import TbEurekaManager
 
 def index(request):
     eurekas = list(TbEurekaManager.objects.all())
-    applications_str = requests.get('http://eureka.didispace.com/eureka/apps').text
+    applications_str = requests.get('http://test.eureka.d.renrenauto.com/eureka/apps').text
 
     root = ElementTree.fromstring(applications_str)
     list_application = root.getiterator("application")
