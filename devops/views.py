@@ -9,30 +9,35 @@ from django.core.exceptions import ValidationError
 from django.http import JsonResponse
 from django.shortcuts import render, HttpResponseRedirect
 
+from microservice.models import TbEurekaManager
+
 logger = logging.getLogger(__name__)
 
 
 def index(request):
-    applications_str = requests.get('http://test.eureka.d.renrenauto.com/eureka/apps').text
-
-    root = ElementTree.fromstring(applications_str)
-    list_application = root.getiterator("application")
-
+    eurekas = list(TbEurekaManager.objects.all())
     application_size = 0
     instance_size = 0
-    for application in list_application:
-        application_size = application_size + 1
-        print('\t application:', application.find('name').text)
-        instance_list = application.getiterator('instance')
-        for instance in instance_list:
-            instance_size = instance_size + 1
-            print('\t |- instanceId', instance.find('instanceId').text)
-            print('\t |- hostName', instance.find('hostName').text)
-            print('\t |- app', instance.find('app').text)
-            print('\t |- ipAddr', instance.find('ipAddr').text)
-            print('\t |- status', instance.find('status').text)
-            print('\t |- statusPageUrl', instance.find('statusPageUrl').text)
-            print('\t |- healthCheckUrl', instance.find('healthCheckUrl').text)
+
+    for eureka in eurekas:
+        applications_str = requests.get(f'{eureka.eureka_url}/eureka/apps').text
+
+        root = ElementTree.fromstring(applications_str)
+        list_application = root.getiterator("application")
+
+        for application in list_application:
+            application_size = application_size + 1
+            print('\t application:', application.find('name').text)
+            instance_list = application.getiterator('instance')
+            for instance in instance_list:
+                instance_size = instance_size + 1
+                print('\t |- instanceId', instance.find('instanceId').text)
+                print('\t |- hostName', instance.find('hostName').text)
+                print('\t |- app', instance.find('app').text)
+                print('\t |- ipAddr', instance.find('ipAddr').text)
+                print('\t |- status', instance.find('status').text)
+                print('\t |- statusPageUrl', instance.find('statusPageUrl').text)
+                print('\t |- healthCheckUrl', instance.find('healthCheckUrl').text)
 
     context = {
         "application_size": application_size,
